@@ -1,0 +1,21 @@
+{
+  "name": "cap-auditlog",
+  "version": "1.0.0",
+  "description": "A CAP project using SAP Audit Log Service.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bymurat/cap-auditlog.git"
+  },
+  "keywords": ["SAP CAP", "cap", "audit log", "auditlog"],
+  "license": "Beerware",
+  "dependencies": {
+    "@sap/cds": "^4",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "sqlite3": "^5"
+  },
+  "scripts": {
+    "start": "npx cds run"
+  }
+}
