@@ -9,12 +9,12 @@ using {
 
 
 entity Orders : cuid, managed {
-    companyName       : String(40);
-    orderDate         : Date;
-    shipCountry       : String;
-    businessPartner   : Association to one BusinessPartner;
-    items             : Composition of many Items
-                            on items.order = $self;
+    companyName     : String(40);
+    orderDate       : Date;
+    shipCountry     : String;
+    businessPartner : Association to one BusinessPartner;
+    items           : Composition of many Items
+                          on items.order = $self;
 }
 
 entity Items {
