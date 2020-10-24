@@ -1,8 +1,9 @@
-using { db } from '../db/model';
+using { cap.auditlog.germancourse as db } from '../db/model';
+
+service admin @(_requires:'authenticated-user'){
+    entity Students as projection on db.Students;
+}
 
 service browse {
-
-    entity Orders as projection on db.Orders;
-    entity BusinessPartner as projection on db.BusinessPartner;
-
+    @readonly entity Students as projection on db.Students excluding { createdBy, modifiedBy };
 }

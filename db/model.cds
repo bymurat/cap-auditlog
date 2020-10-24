@@ -1,34 +1,28 @@
-namespace db;
+namespace cap.auditlog.germancourse;
 
 using {
     cuid,
     managed,
     temporal,
-    Currency
+    sap,
+    Country
 } from '@sap/cds/common';
 
+type Pronoun : Association to Pronouns;
 
-entity Orders : cuid, managed {
-    companyName     : String(40);
-    orderDate       : Date;
-    shipCountry     : String;
-    businessPartner : Association to one BusinessPartner;
-    items           : Composition of many Items
-                          on items.order = $self;
+@Core.Description : 'Preferred gender pronoun list'
+define entity Pronouns : sap.common.CodeList {
+    key code : String(2) @(title : 'Pronoun Code');
 }
 
-entity Items {
-    key ID       : String(40);
-        name     : String;
-        price    : Decimal;
-        currency : Currency;
-        quantity : Integer;
-        order    : Association to Orders;
+@Core.Description : 'Student list includes sensitive/personal data'
+define entity Students : cuid, managed, temporal {
+    pronoun     : Pronoun;
+    name        : String;
+    lastname    : String;
+    birthdate   : Date;
+    nationality : Country;
+    phonenumber : String;
+    email       : String;
 }
 
-entity BusinessPartner : managed {
-    key ID      : String(10);
-        name    : String;
-        surname : String;
-
-}

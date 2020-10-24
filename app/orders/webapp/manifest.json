@@ -35,28 +35,32 @@
     "deviceTypes": {
       "desktop": true,
       "tablet": true,
-      "phone": true
+      "phone": false
     }
   },
 
   "sap.ui5": {
     "flexEnabled": false,
     "rootView": {
-      "viewName": "orders.view.S1",
+      "viewName": "orders.view.App",
       "type": "XML",
-      "async": true,
-      "id": "S1"
+      "async": false,
+      "id": "app"
     },
     "dependencies": {
       "minUI5Version": "1.66.0",
       "libs": {
         "sap.ui.core": {},
         "sap.m": {},
+        "sap.f": {},
         "sap.ui.layout": {}
       }
     },
+    "config": {
+			"fullWidth": true
+		},
     "contentDensities": {
-      "compact": true,
+      "compact": false,
       "cozy": true
     },
     "models": {
