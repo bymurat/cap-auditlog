@@ -1,6 +1,6 @@
 using { cap.auditlog.germancourse as db } from '../db/model';
 
-service admin @(_requires:'authenticated-user'){
+service admin @(requires:'authenticated-user'){
     entity Students as projection on db.Students;
 }   
 

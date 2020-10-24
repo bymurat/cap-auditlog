@@ -1,0 +1,7 @@
+{
+  "xsappname": "cap-auditlog",
+  "tenant-mode": "dedicated",
+  "scopes": [],
+  "attributes": [],
+  "role-templates": []
+}
