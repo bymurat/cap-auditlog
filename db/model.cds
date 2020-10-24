@@ -16,8 +16,9 @@ define entity Pronouns : sap.common.CodeList {
 }
 
 @Core.Description : 'Student list includes sensitive/personal data'
-define entity Students : cuid, managed, temporal {
+define entity Students : cuid, managed {
     pronoun     : Pronoun;
+    internalID  : Integer;
     name        : String;
     lastname    : String;
     birthdate   : Date;

@@ -1,3 +1,3 @@
-ID;internalID;companyName;orderDate;shipCountry;businessPartner_ID;createdBy;createdAt
-33081da9-55a3-412a-a178-9ff0aaca1fd1;100010001;ACME INC;2020-10-10;Turkey;JOHN;admin;2020-10-05
-4cdf5e22-0e11-4c43-beba-70249b6d320b;200010001;SAP SE;2020-10-11;Germany;JOHN;murat;2020-10-06
+ID;internalID;name;lastname;birthdate;nationality_code;pronoun_code;phonenumber;email;createdBy
+33081da9-55a3-412a-a178-9ff0aaca1fd1;100010001;John;Doe;1980-01-01;US;01;555-123-2233;john.doe@mail.com;admin
+4cdf5e22-0e11-4c43-beba-70249b6d320b;200010001;Jane;Doe;1990-01-01;US;02;555-123-2233;jane.doe@mail.com;admin
