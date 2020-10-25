@@ -1,0 +1,34 @@
+@server = http://localhost:4004
+
+### ------------------------------------------------------------------------
+# Get service info
+GET {{server}}/browse
+
+### ------------------------------------------------------------------------
+# Get $metadata document
+GET {{server}}/browse/$metadata
+
+### ------------------------------------------------------------------------
+# Browse Students as any user
+GET {{server}}/browse/Students?
+  &$select=name,lastname
+  &$expand=pronoun
+  &sap-language=de
+
+### ------------------------------------------------------------------------
+# Fetch Students as admin
+GET {{server}}/admin/Students?
+Authorization: Basic admin:admin
+
+### ------------------------------------------------------------------------
+# Create Students
+POST {{server}}/admin/Students
+Content-Type: application/json;IEEE754Compatible=true
+
+{
+    "name"      : "steven",
+    "lastname"  : "smith",
+    "email"     : "mail@mail.com"
+    
+}
+

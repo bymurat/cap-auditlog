@@ -10,20 +10,22 @@ using {
 
 type Pronoun : Association to Pronouns;
 
-@Core.Description : 'Preferred gender pronoun list'
+@description : 'Preferred gender pronoun list'
 define entity Pronouns : sap.common.CodeList {
     key code : String(2) @(title : 'Pronoun Code');
 }
 
-@Core.Description : 'Student list includes sensitive/personal data'
+@description : 'Student list includes sensitive/personal data'
 define entity Students : cuid, managed {
     pronoun     : Pronoun;
     internalID  : Integer;
-    name        : String;
-    lastname    : String;
+    name        : String not null;
+    lastname    : String not null;
     birthdate   : Date;
     nationality : Country;
     phonenumber : String;
-    email       : String;
+    email       : String 
+        @assert.format : '^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$' 
+        not null;
 }
 
