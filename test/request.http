@@ -2,33 +2,25 @@
 
 ### ------------------------------------------------------------------------
 # Get service info
-GET {{server}}/browse
+GET {{server}}/german-class
 
 ### ------------------------------------------------------------------------
 # Get $metadata document
-GET {{server}}/browse/$metadata
+GET {{server}}/german-class/$metadata
 
 ### ------------------------------------------------------------------------
-# Browse Students as any user
-GET {{server}}/browse/Students?
-  &$select=name,lastname
+# Fetch Students as any user
+GET {{server}}/german-class/Students?
+  &$select=name,lastname,email
   &$expand=pronoun
   &sap-language=de
 
 ### ------------------------------------------------------------------------
-# Fetch Students as admin
-GET {{server}}/admin/Students?
-Authorization: Basic admin:admin
-
-### ------------------------------------------------------------------------
-# Create Students
-POST {{server}}/admin/Students
+# Update one Student
+PATCH {{server}}/german-class/Students(33081da9-55a3-412a-a178-9ff0aaca1fd1)
 Content-Type: application/json;IEEE754Compatible=true
 
 {
-    "name"      : "steven",
-    "lastname"  : "smith",
-    "email"     : "mail@mail.com"
-    
+    "email"     : "mailchange@mail.com"
 }
 
