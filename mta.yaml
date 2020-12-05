@@ -1,0 +1,50 @@
+## Generated mta.yaml based on template version 0.4.0
+## appName = cap-auditlog
+## language=nodejs; multiTenant=false
+## approuter=
+_schema-version: '3.1'
+ID: cap-auditlog
+version: 1.0.0
+description: "A CAP project using SAP Audit Log Service."
+parameters:
+  enable-parallel-deployments: true
+   
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install --production
+      - npx -p @sap/cds-dk cds build --production
+
+modules:
+ # --------------------- SERVER MODULE ------------------------
+ - name: cap-auditlog-srv
+ # ------------------------------------------------------------
+   type: nodejs
+   path: gen/srv
+   requires:
+    # Resources extracted from CAP configuration
+    - name: cap-auditlog-uaa
+   provides:
+    - name: srv-api      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        srv-url: ${default-url}
+
+
+
+resources:
+ # services extracted from CAP configuration
+ # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
+# ------------------------------------------------------------
+ - name: cap-auditlog-uaa
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service: xsuaa
+     service-plan: application  
+     config:
+       xsappname: -${space}    #  name + space dependency
+       tenant-mode: dedicated
+      #  scopes:
+      #  - name: $XSAPPNAME.
+
