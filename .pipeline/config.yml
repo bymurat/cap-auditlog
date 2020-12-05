@@ -4,10 +4,10 @@ general:
   gitSshKeyCredentialsId: 'BYMURAT_GITHUB_TOKEN'
 
 ### Step-specific configuration
-steps:
+# steps:
 
 ### Stage-specific configuration
-stages:
+# stages:
 
 #  integrationTests:
 #    credentials:
