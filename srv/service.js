@@ -14,8 +14,11 @@ function connectToLog (err, auditlogging){
 }
 
 async function auditLogCreate (req) {
-
-console.log(req._.req)
+    console.log(req.data)
+    console.log(req.params)
+    console.log(req.query)
+    console.log(req.path)
+    console.log(req.user)
     
 const message = 
     auditlog.update({ type: 'accessed-object-type', id: { key: 'value' } })
@@ -26,11 +29,8 @@ const message =
             .tenant('tenantId')
             .by('John Doe');
  
-message.logPrepare(function (err) {
-    console.log(err)
-  message.logSuccess(function (err) {
-      console.log(err)
-   });
+// message.logPrepare(function (err) {
 
-});
+
+// });
 }

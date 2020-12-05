@@ -1,0 +1,24 @@
+### General project setup
+general:
+  buildTool: 'npm'
+  gitSshKeyCredentialsId: 'BYMURAT_GITHUB_TOKEN'
+
+### Step-specific configuration
+steps:
+
+### Stage-specific configuration
+stages:
+
+#  integrationTests:
+#    credentials:
+#      - alias: 'mySystemAlias'
+#        credentialId: 'mySystemCredentialsId'
+
+#  productionDeployment:
+#    cfTargets:
+#      - org: 'myOrg'
+#        space: 'mySpace'
+#        apiEndpoint: 'https://'
+#        appName: 'myAppName'
+#        manifest: 'manifest.yml'
+#        credentialsId: 'myDeploymentCredentialsId'

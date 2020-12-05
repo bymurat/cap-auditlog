@@ -21,6 +21,7 @@ PATCH {{server}}/german-class/Students(33081da9-55a3-412a-a178-9ff0aaca1fd1)
 Content-Type: application/json;IEEE754Compatible=true
 
 {
-    "email"     : "mailchange@mail.com"
+    "email"     : "mailchange@mail.com",
+    "birthdate" : "1990-03-25"
 }
 
