@@ -1,7 +1,5 @@
 ## Generated mta.yaml based on template version 0.4.0
 ## appName = cap-auditlog
-## language=nodejs; multiTenant=false
-## approuter=
 _schema-version: '3.1'
 ID: cap-auditlog
 version: 1.0.0
