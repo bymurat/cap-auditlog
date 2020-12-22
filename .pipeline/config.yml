@@ -1,6 +1,7 @@
 ### General project setup
 general:
   buildTool: 'npm'
+  gitSshKeyCredentialsId: 'BYMURAT_GITHUB_TOKEN'
 
 
   
